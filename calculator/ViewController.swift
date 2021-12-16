@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var holder : UIView!
     var firstNumber = 0
     var resultNumber = 0
-    var currentOperation : operation?
+    var currentOperation : operation?                       // why ques mark at end of operation
     
     enum operation {
         case add , subtract , multiply , divide
@@ -25,13 +25,14 @@ class ViewController: UIViewController {
         label.textColor = .white
         label.textAlignment = .right
         label.font = UIFont(name: "Arial", size: 24)
-        return label
+        return label                                        // how can we return in a variable. and no
+                                                            //return type is defined
         
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -118,7 +119,7 @@ class ViewController: UIViewController {
 
 }
     
-    @objc  func clearResult(){
+    @objc  func clearResult(){                           // what is the use of @objc here?
         resultlabel.text = "0"
         currentOperation = nil
         firstNumber = 0
@@ -137,6 +138,8 @@ class ViewController: UIViewController {
     
     @objc func operationPressed(_ sender: UIButton){
         let tag = sender.tag
+        
+        // why firstnumber = 0 in the following condition
         if let text = resultlabel.text , let value = Int(text), firstNumber == 0{
             firstNumber = value
             resultlabel.text = "0"
@@ -187,3 +190,7 @@ class ViewController: UIViewController {
 }
 
 
+
+
+
+// why do we have to use holder.addsubview for every button. like if we are creating a button it would obv present in the view only
