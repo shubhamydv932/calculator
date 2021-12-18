@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // IBoutlet and Ibaction : why are they needed
     @IBOutlet var holder : UIView!
     var firstNumber = 0
     var resultNumber = 0
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         label.text = "0"
         label.textColor = .white
         label.textAlignment = .right
-        label.font = UIFont(name: "Arial", size: 24)
+        label.font = UIFont(name: "Arial", size: 8)
         return label                                        // how can we return in a variable. and no
                                                             //return type is defined
         
@@ -32,12 +32,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupNumberPad()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupNumberPad()
+       // setupNumberPad()
         
     }
 
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         resultlabel.text = "0"
         resultlabel.textColor = .white
         resultlabel.textAlignment = .right
-        resultlabel.font = UIFont(name: "Helvetica", size: 100)
+      //  resultlabel.font = UIFont(name: "Helvetica", size: 20)
         
         holder.addSubview(resultlabel)
 
